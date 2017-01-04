@@ -1,2 +1,3 @@
+app/node_modules
 app/webapp/node_modules
 app/webapp/prod/*.*

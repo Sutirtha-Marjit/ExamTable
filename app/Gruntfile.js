@@ -9,7 +9,7 @@ module.exports = function(grunt){
                 optimization:1
             },
             files:{
-                'prod/style/themes/default/style.css':['source/style/themes/*.less','source/style/themes/default/components/*.less']
+                'webapp/prod/style/themes/default/style.css':['webapp/source/style/themes/*.less','webapp/source/style/themes/default/components/*.less']
             }
         }
     };
@@ -17,14 +17,14 @@ module.exports = function(grunt){
 
     TASK_SETTINGS['watch'] = {
         general:{
-            files:['source/**/*'],
+            files:['webapp/source/**/*'],
             tasks:["less","sample-html-copy"]
         }
     };
 
     TASK_SETTINGS['copy'] = {
         themesamples:{
-            files:[{expand:true,cwd:'source/',src:['*.html'],dest:'prod/',filter: 'isFile'}]
+            files:[{expand:true,cwd:'webapp/source/',src:['*.html'],dest:'webapp/prod/',filter: 'isFile'}]
         }
     };
 
