@@ -5,11 +5,12 @@ module.exports = function(grunt){
 
         build:{
             options:{
-                compress:false,
+                compress:true,
                 optimization:1
             },
             files:{
-                'webapp/prod/style/themes/default/style.css':['webapp/source/style/themes/*.less','webapp/source/style/themes/default/components/*.less']
+                'webapp/prod/style/themes/default/style.css':['webapp/source/style/themes/*.less','webapp/source/style/themes/default/components/*.less','webapp/source/style/themes/default/components/**/*.less'],
+                'webapp/prod/style/themes/green3d/style.css':['webapp/source/style/themes/*.less','webapp/source/style/themes/green3d/components/*.less','webapp/source/style/themes/green3d/components/**/*.less'],
             }
         }
     };

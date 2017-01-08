@@ -1,5 +1,26 @@
 @import "../variables.less";
 @import "../mixins.less";
 
+*[class^="container-"]{
+    width: @fullWidth;
+    .mx-mp(0,0);
+}
 .mx-box-loop(12,container-,c,1);
 .mx-box-loop(7,container-,c,1);
+
+@media @tabletPottraitResolution{
+    
+    *[class^="container-"]{
+        >*[class^="c"]{
+            width:@fullWidth;
+        }
+    }
+}
+
+
+
+.mx-padding-loop(pd,40,0);
+.clear{
+    float: none;
+    clear: both;
+}

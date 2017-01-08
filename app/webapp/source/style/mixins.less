@@ -10,6 +10,10 @@
     padding: @padding;
 }
 
+.mx-pd(@padding){
+    padding: @padding;
+}
+
 .mx-box-sizing(@box-sizing){
    box-sizing: border-box;
    -moz-box-sizing: border-box;
@@ -26,12 +30,19 @@
      border:@border-thickness @border-color @border-type;
 }
 
-.mx-shadow(@shadow-horizontal,@shadow-vertical,@shadow-blur,@shadow-spread,@shadow-color,@shadow-opacity,@shadow-inset){
-    box-shadow: @shadow-horizontal @shadow-vertical @shadow-blur @shadow-spread fade(@shadow-color,@shadow-opacity);
+.mx-gradient-generator(@start,@start-position,@end,@end-position){
+    background: -webkit-linear-gradient(top,@start @start-position,@end @end-position);
+    background: -o-linear-gradient(top, @start @start-position,@end @end-position);
+    background: linear-gradient(to bottom, @start @start-position,@end @end-position);
 }
 
-.mx-transition(@tran-duration,@tran-prop,@tran-delay){
+.mx-shadow(@shadow-horizontal,@shadow-vertical,@shadow-blur,@shadow-spread,@shadow-color,@shadow-opacity,@shadow-inset){
+    box-shadow: ~'@{shadow-inset}' @shadow-horizontal @shadow-vertical @shadow-blur @shadow-spread fade(@shadow-color,@shadow-opacity);
+}
 
+.mx-transition(@tran-duration,@tran-prop,@tran-delay,@tran-type){
+    transition: ~"@{tran-prop} @{tran-duration} @{tran-type}";
+    transition-delay:@tran-delay;    
 }
 
 .mx-box(@container-capacity,@element-conut,@wrapper-name,@col-name){
@@ -52,4 +63,21 @@
     
     .mx-box(@container-capacity,@loop-iterator,@wrapper-name,@col-name);
     .mx-box-loop(@container-capacity,@wrapper-name,@col-name,(@loop-iterator+1));
+
+}
+
+.mx-padding-loop(@class-starts-with,@max-padding-loop,@padding-loop-counter) when(@padding-loop-counter<=@max-padding-loop){
+
+    @padding-class-name:~".@{class-starts-with}@{padding-loop-counter}";
+
+    @{padding-class-name}{
+        padding:@padding-loop-counter*1px; 
+    }
+
+    
+    .mx-padding-loop(@class-starts-with,@max-padding-loop,(@padding-loop-counter+2));
+}
+
+.mx-box-responsive(@container-capacity,@element-conut,@wrapper-name,@col-name,){
+
 }

@@ -2,21 +2,123 @@
 <html>
     <title>Default</title>
     <head>
-        <link href="style/themes/default/style.css" type="text/css" rel="stylesheet"/>
+        <link href="style/themes/green3d/style.css" type="text/css" rel="stylesheet"/>
     </head>
     <body>
-        <h1>Hello</h1>
-        <div class="container-12">
-            <div class="c3">
-                Donec venenatis mauris sit amet tellus vehicula, at tristique nibh auctor. Ut ultrices erat sit amet quam pharetra, condimentum pretium risus sollicitudin. Etiam non libero vel nisl luctus aliquam eu a massa. Nulla vitae egestas massa, a varius nibh. Donec in ipsum aliquet, ornare lorem non, ullamcorper diam. 
+         
+                  
+        <div class="custom-input checkbox grren3d">
+            <div class="graphic">
+            <div class="base">
+                <span class="knob-rail"></span>
+                <span class="knob-rail-unchecked"></span>
+                <span class="knob">
+                    <span class="knob-shade-one"></span>
+                    <span class="knob-shade-two"></span>
+                </span>
+            </div>
+            </div>
+            <div class="label-text">
+                Oraija Sativa
             </div> 
-            <div class="c3">
-                Donec venenatis mauris sit amet tellus vehicula, at tristique nibh auctor. Ut ultrices erat sit amet quam pharetra, condimentum pretium risus sollicitudin. Etiam non libero vel nisl luctus aliquam eu a massa. Nulla vitae egestas massa, a varius nibh. Donec in ipsum aliquet, ornare lorem non, ullamcorper diam. 
+            <div class="clear"></div>       
+        </div>
+        <div class="custom-input checkbox grren3d">
+            <div class="graphic">
+            <div class="base">
+                <span class="knob-rail"></span>
+                <span class="knob-rail-unchecked"></span>
+                <span class="knob">
+                    <span class="knob-shade-one"></span>
+                    <span class="knob-shade-two"></span>
+                </span>
+            </div>
+            </div>
+            <div class="label-text">
+                Oraija Sativa
             </div> 
-            <div class="c6">
-                Donec venenatis mauris sit amet tellus vehicula, at tristique nibh auctor. Ut ultrices erat sit amet quam pharetra, condimentum pretium risus sollicitudin. Etiam non libero vel nisl luctus aliquam eu a massa. Nulla vitae egestas massa, a varius nibh. Donec in ipsum aliquet, ornare lorem non, ullamcorper diam. 
+            <div class="clear"></div>       
+        </div>
+        <div class="custom-input checkbox grren3d">
+            <div class="graphic">
+            <div class="base">
+                <span class="knob-rail"></span>
+                <span class="knob-rail-unchecked"></span>
+                <span class="knob">
+                    <span class="knob-shade-one"></span>
+                    <span class="knob-shade-two"></span>
+                </span>
+            </div>
+            </div>
+            <div class="label-text">
+                Oraija Sativa
             </div> 
-              
-        </div>        
+            <div class="clear"></div>       
+        </div>
+        <div class="custom-input checkbox grren3d">
+            <div class="graphic">
+            <div class="base">
+                <span class="knob-rail"></span>
+                <span class="knob-rail-unchecked"></span>
+                <span class="knob">
+                    <span class="knob-shade-one"></span>
+                    <span class="knob-shade-two"></span>
+                </span>
+            </div>
+            </div>
+            <div class="label-text">
+                Oraija Sativa
+            </div> 
+            <div class="clear"></div>       
+        </div>
+        <div class="custom-input checkbox grren3d">
+            <div class="graphic">
+            <div class="base">
+                <span class="knob-rail"></span>
+                <span class="knob-rail-unchecked"></span>
+                <span class="knob">
+                    <span class="knob-shade-one"></span>
+                    <span class="knob-shade-two"></span>
+                </span>
+            </div>
+            </div>
+            <div class="label-text">
+                Oraija Sativa
+            </div> 
+            <div class="clear"></div>       
+        </div>
+        <div class="custom-input checkbox grren3d">
+            <div class="graphic">
+            <div class="base">
+                <span class="knob-rail"></span>
+                <span class="knob-rail-unchecked"></span>
+                <span class="knob">
+                    <span class="knob-shade-one"></span>
+                    <span class="knob-shade-two"></span>
+                </span>
+            </div>
+            </div>
+            <div class="label-text">
+                Oraija Sativa
+            </div> 
+            <div class="clear"></div>       
+        </div>
+
+
+
+
+    <script>
+        var checkboxes = document.querySelectorAll('.checkbox');
+        for(var i=0;i<checkboxes.length;i++){
+            checkboxes[i].addEventListener('click',function(e){
+                if(this.classList.contains('checked')){
+                    this.classList.remove('checked');
+                }else{
+                    this.classList.add('checked');
+                }
+            });
+        }
+        console.log(checkboxes);
+    </script>                
     </body>        
 </html>    

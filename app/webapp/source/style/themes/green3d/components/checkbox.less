@@ -1,0 +1,94 @@
+@import "../../../variables.less";
+@import "../../../mixins.less";
+@import "../theme-variables.less";
+
+.checkbox{
+    cursor:pointer;
+    display: table;
+    border-bottom:fade(@base-color-grey,30%) 1px solid;
+    padding: 25px 10px;
+    width: @fullWidth;
+    .mx-transition(1s,"background",0s,"ease-in-out");
+
+    .graphic{
+        display: table-cell; 
+        vertical-align: middle;
+        position: relative;
+        width:@checkbox-width;
+        .base{
+            width:@checkbox-width;
+            height:@checkbox-height;
+            span{
+                display: block;
+                position: absolute;
+            }
+            .knob-rail{
+                width:@checkbox-width;
+                height:@checkbox-height;
+                .mx-border-complete(1px, @base-color-border, solid,100px);
+                .mx-gradient-generator(@base-color-dark,0%,@base-color-light,100%);
+                .mx-shadow(0px,5px,9px,4px,rgb(0,0,0),30,'inset');
+            }
+            .knob-rail-unchecked{
+                width:@checkbox-width;
+                height:@checkbox-height;
+                .mx-border-complete(1px, @base-color-grey, solid,100px);
+                .mx-gradient-generator(@base-color-grey,0%,white,100%);
+                .mx-shadow(0px,5px,9px,4px,rgb(0,0,0),30,'inset');
+                .mx-transition(0.5s,"opacity",@general-trans-time * 0.85,"ease-in-out");
+                opacity: 1;
+            }
+            .knob{
+                height: @checkbox-height;
+                width: @checkbox-height;
+                .mx-transition(@general-trans-time,"transform",0s,"ease-in-out");
+                transform: translateX(0);
+                .knob-shade-one{
+                    width: 100%;
+                    height: 100%;
+                    .mx-gradient-generator(@base-color-grey,0%,white,100%);
+                    .mx-border-complete(1px, @base-color-grey, solid,100px);
+                    .mx-shadow(0px,2px,2px,2px,rgb(0,0,0),30,'');
+                }
+                .knob-shade-two{
+                    width: (100-(@knob-inner-spoke-position*2))*1%;
+                    height: (100-(@knob-inner-spoke-position*2))*1%;
+                    top:~'@{knob-inner-spoke-position}%';
+                    left:~'@{knob-inner-spoke-position}%';
+                    transform: rotateZ(25deg);
+                    .mx-gradient-generator(white,0%,@base-color-grey,100%);
+                    .mx-border-complete(3px, white, solid,100px);
+                }
+            }
+        }
+
+    }
+
+    .label-text{
+        display: table-cell; 
+        vertical-align: middle;
+        padding: 10px 10px 10px 20px;
+        color:@base-color-text;
+        font-size: 18px;     
+        .mx-transition(@general-trans-time,"color",0s,"ease-in-out");    
+    }
+
+    &.checked{
+        background:fade(@base-color-grey,10%);
+        .graphic{
+
+            .knob{
+                transform: translateX(@knob-position-on-checked);
+            }
+            .knob-rail-unchecked{
+                opacity: 0;
+            }
+
+        }
+
+        .label-text{
+            color:darken(@base-color-dark,10%);                 
+        }
+    }
+
+}
